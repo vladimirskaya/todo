@@ -59,12 +59,17 @@ btnTodoRemove.addEventListener('click', function(event){
 */
 todoControl.addEventListener('submit', function(event){
     event.preventDefault();
-    const newToDo = {
-        value: headerInput.value,
-        completed: false
-    };
-    todoData.push(newToDo);
-    render();
+    if (headerInput.value !== ''){
+        const newToDo = {
+            value: headerInput.value,
+            completed: false
+        };
+        todoData.push(newToDo);
+        headerInput.value = '';
+        render();
+    } else {
+        alert('Введите цель.');
+    }
 });
 
 
