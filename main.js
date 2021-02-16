@@ -10,7 +10,6 @@ const todoControl = document.querySelector('.todo-control'),
 const render = function(){
     todoList.textContent = '';
     todoCompleted.textContent = '';
-    console.log(' from',typeof todoData);
 
     todoData.forEach(function(item){
         const li = document.createElement('li');
@@ -29,18 +28,15 @@ const render = function(){
         const btnTodoComplete = li.querySelector('.todo-complete');
         
         btnTodoComplete.addEventListener('click', function(event){
-            console.log('11',event);
             item.completed = !item.completed;
             render();
             });
 
         const btnTodoRemove = li.querySelector('.todo-remove');
         btnTodoRemove.addEventListener('click', function(event){
-            console.log(item.value, li.textContent);
             let index = 0;
             todoData.forEach(function(item){
                 if (item.value === li.textContent) {
-                    console.log(item, index);
                     todoData.splice(index,1);   
                 }
                 index ++;
