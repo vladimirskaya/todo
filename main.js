@@ -39,6 +39,21 @@ const render = function(){
             render();
             });
 
+        const btnTodoRemove = li.querySelector('.todo-remove');
+        btnTodoRemove.addEventListener('click', function(event){
+            console.log(item.value, li.textContent);
+            let index = 0;
+            todoData.forEach(function(item){
+                if (item.value === li.textContent) {
+                    console.log(item, index);
+                    todoData.splice(index,1);   
+                }
+                index ++;
+            })
+            //console.log(todoData.indexOf(li.textContent,0));
+            li.remove();
+        })
+
     }); 
 };
 
