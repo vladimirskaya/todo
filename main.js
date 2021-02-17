@@ -1,6 +1,10 @@
 'use strict'
 
-const todoData = JSON.parse(localStorage.getItem('data'));
+let todoData = JSON.parse(localStorage.getItem('data'));
+if (todoData === null || todoData.length === 0 ){
+alert('Поздравляем! У вас нет незавершенных дел!');
+todoData = [];
+}
 
 const todoControl = document.querySelector('.todo-control'),
     headerInput = document.querySelector('.header-input'),
