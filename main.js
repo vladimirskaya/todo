@@ -34,14 +34,21 @@ const render = function(){
         btnTodoComplete.addEventListener('click', function(event){
             item.completed = !item.completed;
             render();
-            });
+        });
 
         const btnTodoRemove = li.querySelector('.todo-remove');
-        btnTodoRemove.addEventListener('click', function(event){
-            //event.path[2].remove();
-            li.remove();
-            //console.log(item);
-            todoData.splice(todoData.indexOf(item),1); 
+        btnTodoRemove.addEventListener('click', function(){    
+            item.value  = null;
+            console.log(item);
+            todoData.forEach(function(item,index){
+                console.log(item, index);
+                //console.dir(btnTodoComplete);
+                if (item.value === null ){
+                    todoData.splice(index,1); 
+                }
+            render()
+            });
+            //todoData.splice(todoData.indexOf(item),1); 
         });
     }); 
 };
