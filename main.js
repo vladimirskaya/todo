@@ -40,7 +40,7 @@ const render = function(){
         btnTodoRemove.addEventListener('click', function(event){
             //event.path[2].remove();
             li.remove();
-            console.log(item);
+            //console.log(item);
             todoData.splice(todoData.indexOf(item),1); 
         });
     }); 
