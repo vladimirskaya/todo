@@ -41,14 +41,12 @@ const render = function(){
             item.value  = null;
             console.log(item);
             todoData.forEach(function(item,index){
-                console.log(item, index);
-                //console.dir(btnTodoComplete);
+                //console.log(item, index);
                 if (item.value === null ){
                     todoData.splice(index,1); 
                 }
-            render()
+            render();
             });
-            //todoData.splice(todoData.indexOf(item),1); 
         });
     }); 
 };
