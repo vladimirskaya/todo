@@ -15,7 +15,7 @@ const render = function(){
     todoList.textContent = '';
     todoCompleted.textContent = '';
 
-    todoData.forEach(function(item){
+    todoData.forEach(function(item, index){
         const li = document.createElement('li');
         li.classList.add('todo-item');
 
@@ -38,15 +38,8 @@ const render = function(){
 
         const btnTodoRemove = li.querySelector('.todo-remove');
         btnTodoRemove.addEventListener('click', function(){    
-            item.value  = null;
-            console.log(item);
-            todoData.forEach(function(item,index){
-                //console.log(item, index);
-                if (item.value === null ){
-                    todoData.splice(index,1); 
-                }
+            todoData.splice(index,1); 
             render();
-            });
         });
     }); 
 };
