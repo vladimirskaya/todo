@@ -52,6 +52,7 @@ class Todo {
                 key: this.generateKey(),
             };
             this.todoData.set(newTodo.key, newTodo);
+	    this.form.querySelector('.header-input').value = '';
             this.render();
         }else{
 		alert('Вы пытаетесь ввести пустое значение');
