@@ -42,7 +42,7 @@ class Todo {
         }
     }
 
-    addTodo(e) {
+        addTodo(e) {
         e.preventDefault(); 
 		//сюда передается значение this - форма, но метод забиндили с объектом 
         if (this.input.value.trim()) {
@@ -53,7 +53,9 @@ class Todo {
             };
             this.todoData.set(newTodo.key, newTodo);
             this.render();
-        }
+        }else{
+		alert('Вы пытаетесь ввести пустое значение');
+	};
     }
 	
     generateKey() {
